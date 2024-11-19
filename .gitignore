@@ -11,3 +11,17 @@
 *.json
 /Library
 /Logs
+/Temp
+/Assembly-CSharp.csproj
+/Juego_test.sln
+/SimpleInput.Editor.csproj
+/SimpleInput.Runtime.csproj
+/obj/Release/SimpleInput.Runtime.csproj.AssemblyReference.cache
+/obj/Release/Assembly-CSharp.csproj.AssemblyReference.cache
+/obj/Debug/SimpleInput.Runtime.csproj.AssemblyReference.cache
+/obj/Debug/SimpleInput.Editor.csproj.AssemblyReference.cache
+/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+/obj/Release/SimpleInput.Editor.csproj.AssemblyReference.cache
+/.vs/slnx.sqlite
+/.vsconfig
+/.vs/Juego_test/config/applicationhost.config
