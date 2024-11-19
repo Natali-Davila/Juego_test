@@ -9,3 +9,5 @@
 *.db
 *.opendb
 *.json
+/Library
+/Logs
