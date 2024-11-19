@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/Juego_test/FileContentIndex
+/log
+*.db-shm
+*.db-wal
+*.db
+*.opendb
+*.json
