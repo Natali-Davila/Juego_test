@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Color incorrectColor = Color.red;
     [SerializeField] private float waitTime = 1.0f;
     [SerializeField] private Text correctAnswerText = null;
-    [SerializeField] private Button exitButton = null; // Variable para el botón de salir
+    [SerializeField] private Button exitButton = null; 
 
     public GameObject[] hearts;
     private int life;
@@ -128,11 +128,11 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        SceneManager.LoadScene(0); // Cambiar a la escena de Game Over
+        SceneManager.LoadScene(0); 
     }
 
     private void OnExitButtonClicked()
     {
-        SceneManager.LoadScene(1); // Cargar la escena con índice 1
+        SceneManager.LoadScene(1); 
     }
 }

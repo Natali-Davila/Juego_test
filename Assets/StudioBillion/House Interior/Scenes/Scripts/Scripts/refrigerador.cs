@@ -5,8 +5,8 @@ using UnityEngine;
 public class refrigerador : MonoBehaviour
 {
 private bool jugadorColisionando = false;
-    public GameObject TextDetect; // Reference to the GameObject to activate/deactivate
-    private GameObject player; // Reference to the player GameObject
+    public GameObject TextDetect;
+    private GameObject player; 
 
     private void OnCollisionEnter(Collision other)
     {
@@ -31,7 +31,7 @@ private bool jugadorColisionando = false;
     private void Start()
     {
         if (TextDetect != null)
-            TextDetect.SetActive(false); // Deactivate the text at the start
+            TextDetect.SetActive(false); 
 
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
@@ -42,7 +42,6 @@ private bool jugadorColisionando = false;
 
     private void Update()
     {
-        // Check if the "L" key is pressed and the player is colliding
         if (jugadorColisionando && Input.GetKeyDown(KeyCode.S))
         {
             ActivarObjeto();
@@ -51,13 +50,11 @@ private bool jugadorColisionando = false;
 
     public void ActivarObjeto()
     {
-        // Desactiva el objeto TextDetect si existe
         if (TextDetect != null)
         {
             TextDetect.SetActive(false);
         }
 
-        // Destruye el objeto asociado a este script
         Destroy(gameObject);
     }
 }

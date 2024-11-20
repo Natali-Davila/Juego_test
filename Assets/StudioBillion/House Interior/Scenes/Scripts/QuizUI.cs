@@ -7,7 +7,7 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] private Text m_question = null;
     [SerializeField] private List<OptionButton> m_buttonList = null;
-    [SerializeField] private Image m_questionImage = null; // Agregado para la imagen
+    [SerializeField] private Image m_questionImage = null; 
     
 
     public void Construtc(Question q, Action<OptionButton> callback)
@@ -33,23 +33,19 @@ public class QuizUI : MonoBehaviour
             Debug.LogError("Question Text component is not assigned");
         }
 
-        // Establecer la imagen correspondiente a la pregunta
         if (m_questionImage != null)
         {
-            m_questionImage.sprite = q.image; // Asegúrate de que 'image' es de tipo 'Sprite'
+            m_questionImage.sprite = q.image; 
         }
         else
         {
             Debug.LogError("Question Image component is not assigned");
         }
 
-        // Mezclar las opciones de manera aleatoria
         List<Option> shuffledOptions = ShuffleOptions(q.options);
 
-        // Asignar los datos a los botones de opción
         for (int n = 0; n < m_buttonList.Count; n++)
         {
-            // Check if the index is within bounds for options
             if (n >= shuffledOptions.Count)
             {
                 Debug.LogError($"No option available for button index {n}");

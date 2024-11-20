@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class animalesSound : MonoBehaviour
 {
     public Button buttonDetect;
@@ -38,11 +38,14 @@ public class animalesSound : MonoBehaviour
             buttonDetect.onClick.AddListener(ActivarObjeto);
         }
     }
-
     public void ActivarObjeto()
     {
+        Destroy(gameObject);
 
-        SceneManager.LoadScene("");
+        if (gameObject != null)
+        {
+            buttonDetect.gameObject.SetActive(false);
+        }
     }
 }
 
