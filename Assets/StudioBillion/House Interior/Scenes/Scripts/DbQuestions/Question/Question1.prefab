@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -50,16 +49,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d7c6e99e76d6343865398f15c05af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\xBFCu\xE1l es  el color del libro?"
-  image: {fileID: 21300000, guid: 5f443a24ffe80c342be04d8e3377a404, type: 3}
+  text: " \xBFCu\xE1l es el color del libro?"
+  image: {fileID: 21300000, guid: 26e1b41655b03a14e8f1f3591feb92b7, type: 3}
   options:
   - text: Azul
-    correct: 0
-  - text: Rojo
-    correct: 0
-  - text: Morado
     correct: 1
   - text: Amarillo
+    correct: 0
+  - text: Morado
+    correct: 0
+  - text: Rojo
     correct: 0
 --- !u!222 &6879201622565885256
 CanvasRenderer:

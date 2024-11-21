@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class animalesSound : MonoBehaviour
@@ -38,14 +39,21 @@ public class animalesSound : MonoBehaviour
             buttonDetect.onClick.AddListener(ActivarObjeto);
         }
     }
+    //public void ActivarObjeto()
+    //{
+    //
+
+    //    Destroy(gameObject);
+
+    //    if (gameObject != null)
+    //    {
+    //        buttonDetect.gameObject.SetActive(false);
+    //    }
+    //}
     public void ActivarObjeto()
     {
-        Destroy(gameObject);
 
-        if (gameObject != null)
-        {
-            buttonDetect.gameObject.SetActive(false);
-        }
+        SceneManager.LoadScene("arcadeAnimalesSonidos");
     }
 }
 

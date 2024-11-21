@@ -13,11 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float waitTime = 1.0f;
     [SerializeField] private Text correctAnswerText = null;
     [SerializeField] private Button exitButton = null; 
-
     public GameObject[] hearts;
     private int life;
     private int correctAnswerCount = 0;
-    private const int maxCorrectAnswers = 10;
+    private const int maxCorrectAnswers = 9;
 
     private QuizDb quizDB = null;
     private QuizUI quizUI = null;
@@ -41,11 +40,9 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // Inicializar vidas
         life = hearts.Length;
         UpdateHearts();
 
-        // Configurar el botón de salir
         if (exitButton != null)
         {
             exitButton.onClick.AddListener(OnExitButtonClicked);
@@ -103,6 +100,10 @@ public class GameManager : MonoBehaviour
         {
             correctAnswerCount++;
             UpdateCorrectAnswerText();
+        }
+        else if (maxCorrectAnswers <= 9)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

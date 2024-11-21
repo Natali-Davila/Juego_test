@@ -23,26 +23,15 @@ public class OptionButton : MonoBehaviour
 
     public void Construtc(Option option, Action<OptionButton> callback)
     {
-        // Limpiar los listeners existentes para evitar múltiples asignaciones
         m_button.onClick.RemoveAllListeners();
 
-        // Configurar el texto del botón y el color original
         m_text.text = option.text;
         m_button.enabled = true;
         m_image.color = m_originalColor;
-
-        // Configurar la opción
         Option = option;
 
-        // Agregar el listener al botón
         m_button.onClick.AddListener(() => callback(this));
 
-        // Aquí podrías añadir lógica adicional para manejar la opción correcta,
-        // por ejemplo, cambiar el color del botón si la opción es correcta
-        // if (option.correct)
-        // {
-        //     m_image.color = Color.green; // Ejemplo: color verde para respuestas correctas
-        // }
     }
 
     public void SetColor(Color c)
