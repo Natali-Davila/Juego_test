@@ -1,77 +1,3 @@
-//using System;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.UI;
-
-//public class QuizUI : MonoBehaviour
-//{
-//    [SerializeField] private Text m_question = null;
-//    [SerializeField] private List<OptionButton> m_buttonList = null;
-//    [SerializeField] private Button m_button = null;
-
-
-//    public void Construtc(Question q, Action<OptionButton> callback)
-//    {
-//        if (q == null)
-//        {
-//            Debug.LogError("Question object is null");
-//            return;
-//        }
-
-//        if (m_buttonList == null || m_buttonList.Count != q.options.Count)
-//        {
-//            Debug.LogError($"Mismatch between button list count ({m_buttonList?.Count ?? 0}) and options count ({q.options.Count})");
-//            return;
-//        }
-
-//        if (m_question != null)
-//        {
-//            m_question.text = q.text;
-//        }
-//        else
-//        {
-//            Debug.LogError("Question Text component is not assigned");
-//        }
-
-//        if (m_questionImage != null)
-//        {
-//            m_questionImage.sprite = q.image; 
-//        }
-//        else
-//        {
-//            Debug.LogError("Question Image component is not assigned");
-//        }
-
-//        List<Option> shuffledOptions = ShuffleOptions(q.options);
-
-//        for (int n = 0; n < m_buttonList.Count; n++)
-//        {
-//            if (n >= shuffledOptions.Count)
-//            {
-//                Debug.LogError($"No option available for button index {n}");
-//                continue;
-//            }
-
-//            m_buttonList[n].Construtc(shuffledOptions[n], callback);
-//        }
-//    }
-
-//    private List<Option> ShuffleOptions(List<Option> options)
-//    {
-//        List<Option> shuffledOptions = new List<Option>(options);
-//        System.Random rng = new System.Random();
-//        int n = shuffledOptions.Count;
-//        while (n > 1)
-//        {
-//            n--;
-//            int k = rng.Next(n + 1);
-//            Option value = shuffledOptions[k];
-//            shuffledOptions[k] = shuffledOptions[n];
-//            shuffledOptions[n] = value;
-//        }
-//        return shuffledOptions;
-//    }
-//}
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,7 +7,7 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] private Text m_question = null;
     [SerializeField] private List<OptionButton> m_buttonList = null;
-    [SerializeField] private Button m_button = null;
+    [SerializeField] private Image m_questionImage = null; 
 
     public void Construtc(Question q, Action<OptionButton> callback)
     {
@@ -106,14 +32,14 @@ public class QuizUI : MonoBehaviour
             Debug.LogError("Question Text component is not assigned");
         }
 
-
-        if (m_button != null && m_button.GetComponent<Image>() != null)
+    
+        if (m_questionImage != null)
         {
-            m_button.GetComponent<Image>().sprite = q.image;
+            m_questionImage.sprite = q.image; 
         }
         else
         {
-            Debug.LogError("Button component or Image component is not assigned");
+            Debug.LogError("Question Image component is not assigned");
         }
 
         List<Option> shuffledOptions = ShuffleOptions(q.options);
