@@ -1,8 +1,6 @@
 using System.Linq;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class QuizDb : MonoBehaviour
 {
@@ -19,11 +17,10 @@ public class QuizDb : MonoBehaviour
         if (m_questionList.Count == 0)
         {
             RestoreBackup();
-            // If after restoring backup the list is still empty, handle this case
             if (m_questionList.Count == 0)
             {
                 Debug.LogError("The question list is empty.");
-                return null; // or handle appropriately in your application
+                return null; 
             }
         }
 
@@ -33,7 +30,7 @@ public class QuizDb : MonoBehaviour
         if (index < 0 || index >= m_questionList.Count)
         {
             Debug.LogError("Random index out of range: " + index);
-            return null; // or handle appropriately in your application
+            return null;
         }
 
         if (!remove)
@@ -43,7 +40,6 @@ public class QuizDb : MonoBehaviour
         m_questionList.RemoveAt(index);
         return q;
     }
-
 
     private void RestoreBackup()
     {

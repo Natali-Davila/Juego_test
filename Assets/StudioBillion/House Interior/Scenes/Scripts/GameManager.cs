@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] hearts;
     private int life;
     private int correctAnswerCount = 0;
-    private const int maxCorrectAnswers = 9;
+    private const int maxCorrectAnswers = 10;
 
     private QuizDb quizDB = null;
     private QuizUI quizUI = null;
@@ -100,10 +100,10 @@ public class GameManager : MonoBehaviour
         {
             correctAnswerCount++;
             UpdateCorrectAnswerText();
-        }
-        else if (maxCorrectAnswers <= 9)
-        {
-            SceneManager.LoadScene(0);
+            if (correctAnswerCount == 10) 
+            {
+                GameOver();
+            }
         }
     }
 
