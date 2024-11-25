@@ -7,7 +7,6 @@ public class QuizUISonidos : MonoBehaviour
 {
     [SerializeField] private Image m_questionImages = null;
     [SerializeField] private List<OptionButtonSonidos> m_buttonLists = null;
-    [SerializeField] private Button m_button = null;
 
     public void Construtc(QuestionSonidos q, Action<OptionButtonSonidos> callback)
     {
