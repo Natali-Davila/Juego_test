@@ -7,6 +7,8 @@ public class QuizUISonidos : MonoBehaviour
 {
     [SerializeField] private Image m_questionImages = null;
     [SerializeField] private List<OptionButtonSonidos> m_buttonLists = null;
+    [SerializeField] public AudioClip audioSources = null;
+
 
     public void Construtc(QuestionSonidos q, Action<OptionButtonSonidos> callback)
     {
@@ -24,9 +26,9 @@ public class QuizUISonidos : MonoBehaviour
 
         if (m_questionImages != null)
         {
-            if (q.image != null)
+            if (q.imageSoun != null)
             {
-                m_questionImages.sprite = q.image;
+                m_questionImages.sprite = q.imageSoun;
             }
         }
         else
