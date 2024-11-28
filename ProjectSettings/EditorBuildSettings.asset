@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/StudioBillion/House Interior/Scenes/colorQuestion.unity
     guid: 0c077d9a6ebd48d4c87909355fdb1110
   - enabled: 1
-    path: Assets/StudioBillion/House Interior/Scenes/arcadeAnimalesSonidos.unity
-    guid: 1943d9abcb08df649ab72a19a03a6d7d
+    path: Assets/StudioBillion/House Interior/Scenes/AnimalSonidos.unity
+    guid: 41a2189463bb9c342a7d94e66b6d0241
   m_configObjects: {}

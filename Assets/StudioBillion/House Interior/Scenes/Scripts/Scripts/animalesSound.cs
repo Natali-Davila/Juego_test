@@ -39,21 +39,10 @@ public class animalesSound : MonoBehaviour
             buttonDetect.onClick.AddListener(ActivarObjeto);
         }
     }
-    //public void ActivarObjeto()
-    //{
-    //
-
-    //    Destroy(gameObject);
-
-    //    if (gameObject != null)
-    //    {
-    //        buttonDetect.gameObject.SetActive(false);
-    //    }
-    //}
     public void ActivarObjeto()
     {
 
-        SceneManager.LoadScene("arcadeAnimalesSonidos");
+        SceneManager.LoadScene("AnimalSonidos");
     }
 }
 
