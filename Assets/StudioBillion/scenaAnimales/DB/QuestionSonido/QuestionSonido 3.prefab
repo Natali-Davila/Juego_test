@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Indica el animal correspondiente al sonido
-  image: {fileID: 21300000, guid: a5f671fa70dff774da5086a309d092fa, type: 3}
+  imageSoun: {fileID: 21300000, guid: 91d4c490a4085034a94346078d43508d, type: 3}
   optionSound:
   - text: Perro
     image: {fileID: 21300000, guid: f1da333a89020b34f9c69d0b07eff293, type: 3}
@@ -59,3 +59,4 @@ MonoBehaviour:
   - text: Gallo
     image: {fileID: 21300000, guid: 1b734069e8a86a0408f3d8978f261559, type: 3}
     correct: 0
+  audioForImage: {fileID: 8300000, guid: a6f0b052e49904047a69cd2561c163c2, type: 3}

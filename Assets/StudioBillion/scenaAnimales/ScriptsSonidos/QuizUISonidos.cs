@@ -7,9 +7,17 @@ public class QuizUISonidos : MonoBehaviour
 {
     [SerializeField] private Image m_questionImages = null;
     [SerializeField] private List<OptionButtonSonidos> m_buttonLists = null;
-    [SerializeField] public AudioClip audioSources = null;
+    private AudioSource music;
+    public AudioClip ClickAudio;
 
-
+    private void Start()
+    {
+        music = GetComponent<AudioSource>();
+    }
+    public void ClickAudioOn()
+    {
+        music.PlayOneShot(ClickAudio);
+    }
     public void Construtc(QuestionSonidos q, Action<OptionButtonSonidos> callback)
     {
         if (q == null)
@@ -23,12 +31,15 @@ public class QuizUISonidos : MonoBehaviour
             Debug.LogError($"Mismatch between button list count ({m_buttonLists?.Count ?? 0}) and options count ({q.optionSound.Count})");
             return;
         }
-
         if (m_questionImages != null)
         {
             if (q.imageSoun != null)
             {
                 m_questionImages.sprite = q.imageSoun;
+                if (q.audioForImage != null && music != null)
+                {
+                    ClickAudio = q.audioForImage;
+                }
             }
         }
         else
@@ -49,7 +60,6 @@ public class QuizUISonidos : MonoBehaviour
             m_buttonLists[n].Construtc(shuffledOptions[n], callback);
         }
     }
-
     private List<OptionSonidos> ShuffleOptions(List<OptionSonidos> options)
     {
         List<OptionSonidos> shuffledOptionss = new List<OptionSonidos>(options);
@@ -65,5 +75,4 @@ public class QuizUISonidos : MonoBehaviour
         }
         return shuffledOptionss;
     }
-
 }

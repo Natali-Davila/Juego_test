@@ -59,4 +59,4 @@ MonoBehaviour:
   - text: Gallo
     image: {fileID: 21300000, guid: 1b734069e8a86a0408f3d8978f261559, type: 3}
     correct: 0
-  audioSource: {fileID: 8300000, guid: 31d7a64977b9d694987b7321013c62c9, type: 3}
+  audioForImage: {fileID: 8300000, guid: 31d7a64977b9d694987b7321013c62c9, type: 3}
