@@ -13,6 +13,7 @@ public class animalesSound : MonoBehaviour
         {
             if (buttonDetect != null)
                 buttonDetect.gameObject.SetActive(true);
+            //p
         }
     }
     private void OnCollisionExit(Collision other)
