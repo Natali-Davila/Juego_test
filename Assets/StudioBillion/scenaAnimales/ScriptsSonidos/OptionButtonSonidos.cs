@@ -8,7 +8,6 @@ public class OptionButtonSonidos : MonoBehaviour
     private Image m_images;
     private Color m_originalColors;
     private Image m_buttonImages = null;
-    //private AudioSource m_audioSources;
     public OptionSonidos Option { get; private set; }
 
     private void Awake()

@@ -36,10 +36,11 @@ public class QuizUISonidos : MonoBehaviour
             if (q.imageSoun != null)
             {
                 m_questionImages.sprite = q.imageSoun;
-                if (q.audioForImage != null && music != null)
-                {
-                    ClickAudio = q.audioForImage;
-                }
+            }
+
+            if (q.audioForImage != null)
+            {
+                ClickAudio = q.audioForImage;
             }
         }
         else
