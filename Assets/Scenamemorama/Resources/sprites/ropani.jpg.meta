@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec8de8f95e2301f4a9bba123f0db652f
+guid: 4d0bf6b5b06f0524a9cdd4f999fc42ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,13 +44,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 12
+  spriteExtrude: 11
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -94,10 +94,36 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: 72
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -106,509 +132,438 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ropabo_0
+      name: ropani_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 696
-        width: 105
-        height: 85
+        x: 0
+        y: 197.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9832c47607d60d438a7b08a92b8dc57
-      internalID: -894514638
+      spriteID: 60960c7acc25ad448941eebac53a4154
+      internalID: -1101241530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_1
+      name: ropani_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 696
-        width: 105
-        height: 85
+        x: 70
+        y: 197.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c2eed6602cc1d04d9e45b4ccca006b9
-      internalID: 853578557
+      spriteID: 0b2482a0acc5ca4458122004ec69a1e4
+      internalID: 388227141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_2
+      name: ropani_2
       rect:
         serializedVersion: 2
-        x: 269
-        y: 696
-        width: 105
-        height: 85
+        x: 140
+        y: 197.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0b7e63ffe8ffb34fa44637f48db63ae
-      internalID: 1416776947
+      spriteID: de607e40879bad94f8e5c562af0ccad9
+      internalID: -568223632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_3
+      name: ropani_3
       rect:
         serializedVersion: 2
-        x: 394
-        y: 696
-        width: 105
-        height: 85
+        x: 210
+        y: 197.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0490ddc8d1b756348bf4846d1ae235c6
-      internalID: -1047023956
+      spriteID: 21fb7a8328787cd45a262b634425e1e4
+      internalID: -156876339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_4
+      name: ropani_4
       rect:
         serializedVersion: 2
-        x: 19
-        y: 572
-        width: 105
-        height: 85
+        x: 280
+        y: 197.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bce61940a688cf4aa6f2b6c20948c0f
-      internalID: -350448508
+      spriteID: db708a28934a59c4f8e989df32be7376
+      internalID: -577319744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_5
+      name: ropani_5
       rect:
         serializedVersion: 2
-        x: 144
-        y: 572
-        width: 105
-        height: 85
+        x: 0
+        y: 132.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9be9579cab405140b08b8ef77cea0a7
-      internalID: 106800080
+      spriteID: d328bd279f8761448b95b4e8c23b79b7
+      internalID: -315473324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_6
+      name: ropani_6
       rect:
         serializedVersion: 2
-        x: 269
-        y: 572
-        width: 105
-        height: 85
+        x: 70
+        y: 132.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31d915ae42bd26445852d4b4cdd2dce5
-      internalID: -2070576042
+      spriteID: d1445c0027e278a4d800a8e4616f5167
+      internalID: -477767156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_7
+      name: ropani_7
       rect:
         serializedVersion: 2
-        x: 394
-        y: 572
-        width: 105
-        height: 85
+        x: 140
+        y: 132.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 675204b8c6343064d8997dc9a0237f64
-      internalID: -1637110991
+      spriteID: 124bcba83a29e5f42a10de46de34bed4
+      internalID: -581512599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_8
+      name: ropani_8
       rect:
         serializedVersion: 2
-        x: 19
-        y: 448
-        width: 105
-        height: 85
+        x: 210
+        y: 132.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a059d72a0552554f834e229ada1bb4e
-      internalID: 2058048239
+      spriteID: cf75fee876e7c8e4585500aac956a400
+      internalID: -1579898562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_9
+      name: ropani_9
       rect:
         serializedVersion: 2
-        x: 144
-        y: 448
-        width: 105
-        height: 85
+        x: 280
+        y: 132.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f0440272e79aa4e91adc9a869c289f
-      internalID: -998873411
+      spriteID: 3a1d64bded1198a43a35fb299548e38d
+      internalID: 465228663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_10
+      name: ropani_10
       rect:
         serializedVersion: 2
-        x: 269
-        y: 448
-        width: 105
-        height: 85
+        x: 0
+        y: 67.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 777a99a1428a86446a5ac25bd7d0b2b9
-      internalID: 1846054396
+      spriteID: 68608b521315a3f48a412fc21bc6678f
+      internalID: -1160067538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_11
+      name: ropani_11
       rect:
         serializedVersion: 2
-        x: 394
-        y: 448
-        width: 105
-        height: 85
+        x: 70
+        y: 67.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cec5e2e95c0be74f9dff4564a6b89f8
-      internalID: -1714546367
+      spriteID: 78ddf81903eff7447b5d537197c023d8
+      internalID: -1034078207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_12
+      name: ropani_12
       rect:
         serializedVersion: 2
-        x: 19
-        y: 324
-        width: 105
-        height: 85
+        x: 140
+        y: 67.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec2b6ff6b85924848a9268f5cc6432b1
-      internalID: -423188367
+      spriteID: 71c970b223be24d4ebbc462e976bf0f6
+      internalID: -1571884730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_13
+      name: ropani_13
       rect:
         serializedVersion: 2
-        x: 144
-        y: 324
-        width: 105
-        height: 85
+        x: 210
+        y: 67.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a33aab5aef1f4f4fb718007db58ad69
-      internalID: -822023703
+      spriteID: 987af876f4f38d64b851c4efeb0f5dab
+      internalID: 1575311131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_14
+      name: ropani_14
       rect:
         serializedVersion: 2
-        x: 269
-        y: 324
-        width: 105
-        height: 85
+        x: 280
+        y: 67.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c8e43994dea93e48b3720728f1244e6
-      internalID: 223646068
+      spriteID: 06086fcee22ab4e40a432d3e268a6f8d
+      internalID: -756078404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_15
+      name: ropani_15
       rect:
         serializedVersion: 2
-        x: 394
-        y: 324
-        width: 105
-        height: 85
+        x: 0
+        y: 2.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3792632d73a4704eb5100f15e6d9277
-      internalID: -1831555256
+      spriteID: 9c1af8028a7af254abdbdf41c73b0883
+      internalID: -2106487141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_16
+      name: ropani_16
       rect:
         serializedVersion: 2
-        x: 19
-        y: 200
-        width: 105
-        height: 85
+        x: 70
+        y: 2.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 503b9aec65a4dac4188ade7f2f8d175c
-      internalID: -1941009072
+      spriteID: 656c715f79ae5994691b7de208b3b791
+      internalID: -2119301945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_17
+      name: ropani_17
       rect:
         serializedVersion: 2
-        x: 144
-        y: 200
-        width: 105
-        height: 85
+        x: 140
+        y: 2.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ac177d0c1db3d44dbcd856d4170aaf4
-      internalID: -542124125
+      spriteID: 925e3c3c6d573bd48a15b9041efd89d8
+      internalID: 1767133282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_18
+      name: ropani_18
       rect:
         serializedVersion: 2
-        x: 269
-        y: 200
-        width: 105
-        height: 85
+        x: 210
+        y: 2.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f613a9c95195ea4881a34dbf4a1352b
-      internalID: 433815995
+      spriteID: 83d9712f8855cdf45b2e713536c44ede
+      internalID: -1070205054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ropabo_19
+      name: ropani_19
       rect:
         serializedVersion: 2
-        x: 394
-        y: 200
-        width: 105
-        height: 85
+        x: 280
+        y: 2.25
+        width: 70
+        height: 65.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eec5449d5889fbf44a1a714cdea9c33b
-      internalID: -1401988262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ropabo_20
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 76
-        width: 105
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ef5372742c27ce4ab016b47bba10073
-      internalID: 1002204896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ropabo_21
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 76
-        width: 105
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c76f9ef74124f74aa7eb20aadc7be69
-      internalID: -874456110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ropabo_22
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 76
-        width: 105
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c9b188d5c6d40246baf59984d6cc157
-      internalID: -773572043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ropabo_23
-      rect:
-        serializedVersion: 2
-        x: 394
-        y: 76
-        width: 105
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaa98d51521b7134ab15fc02458b3e59
-      internalID: 1760117853
+      spriteID: 92d21dfa2f2e75146a22e32c8c9259fa
+      internalID: -1989354959
       vertices: []
       indices: 
       edges: []
@@ -616,7 +571,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b7c33627f2579ae419fc489cf450dfb7
+    spriteID: 00f77455d2f17094e9373eb4a3338c16
     internalID: 0
     vertices: []
     indices: 
@@ -624,30 +579,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ropabo_0: -894514638
-      ropabo_1: 853578557
-      ropabo_10: 1846054396
-      ropabo_11: -1714546367
-      ropabo_12: -423188367
-      ropabo_13: -822023703
-      ropabo_14: 223646068
-      ropabo_15: -1831555256
-      ropabo_16: -1941009072
-      ropabo_17: -542124125
-      ropabo_18: 433815995
-      ropabo_19: -1401988262
-      ropabo_2: 1416776947
-      ropabo_20: 1002204896
-      ropabo_21: -874456110
-      ropabo_22: -773572043
-      ropabo_23: 1760117853
-      ropabo_3: -1047023956
-      ropabo_4: -350448508
-      ropabo_5: 106800080
-      ropabo_6: -2070576042
-      ropabo_7: -1637110991
-      ropabo_8: 2058048239
-      ropabo_9: -998873411
+      ropani_0: -1101241530
+      ropani_1: 388227141
+      ropani_10: -1160067538
+      ropani_11: -1034078207
+      ropani_12: -1571884730
+      ropani_13: 1575311131
+      ropani_14: -756078404
+      ropani_15: -2106487141
+      ropani_16: -2119301945
+      ropani_17: 1767133282
+      ropani_18: -1070205054
+      ropani_19: -1989354959
+      ropani_2: -568223632
+      ropani_3: -156876339
+      ropani_4: -577319744
+      ropani_5: -315473324
+      ropani_6: -477767156
+      ropani_7: -581512599
+      ropani_8: -1579898562
+      ropani_9: 465228663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
