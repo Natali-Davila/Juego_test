@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/StudioBillion/House Interior/Scenes/AnimalSonidos.unity
     guid: 41a2189463bb9c342a7d94e66b6d0241
+  - enabled: 1
+    path: Assets/StudioBillion/House Interior/Scenes/Mymemorama.unity
+    guid: 89116ea50cc6d7c4fbed62bbc95dc989
   m_configObjects: {}

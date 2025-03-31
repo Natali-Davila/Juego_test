@@ -1,48 +1,49 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class Colores : MonoBehaviour
 {
-    public Button buttonDetect; 
+    public Button buttonDetect;
     private GameObject player;
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.CompareTag("Player"))
-        {
-            if (buttonDetect != null)
-                buttonDetect.gameObject.SetActive(true); 
-        }
-    }
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.collider.CompareTag("Player"))
-        {
-            if (buttonDetect != null)
-                buttonDetect.gameObject.SetActive(false); 
-        }
-    }
     private void Start()
     {
         if (buttonDetect != null)
-            buttonDetect.gameObject.SetActive(false); 
+            buttonDetect.gameObject.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            Debug.LogError("no se encontro el GameObject");
+            Debug.LogError("No se encontró el GameObject con la etiqueta 'Player'");
         }
 
         if (buttonDetect != null)
         {
-            buttonDetect.onClick.AddListener(ActivarObjeto); 
+            buttonDetect.onClick.AddListener(ActivarObjeto);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (buttonDetect != null)
+                buttonDetect.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (buttonDetect != null)
+                buttonDetect.gameObject.SetActive(false);
         }
     }
 
     public void ActivarObjeto()
     {
-        
         SceneManager.LoadScene("colorQuestion");
     }
 }

@@ -93,30 +93,6 @@ public class GameController : MonoBehaviour
                 Debug.Log("incorrect");
             }
         }
-        //if (!firstGuess)
-        //{
-        //    firstGuess = true;
-        //    firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        //    firstGuessPuzzle = gamePuzzles[firstGuessIndex].name;
-        //    btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
-        //}
-        //else if (!secondGuess)
-        //{
-        //    secondGuess = true;
-        //    secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        //    secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-        //    btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-        //    countGuesses++;
-
-        //    StartCoroutine(CheckIfThePuzzlesMatch());
-        //    if (firstGuessPuzzle == secondGuessPuzzle) {
-        //        Debug.Log("Correct puzzle match");
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("incorrect");
-        //    }
-        //}
     }
     IEnumerator CheckIfThePuzzlesMatch()
     {
@@ -142,28 +118,6 @@ public class GameController : MonoBehaviour
         }
         yield return new WaitForSeconds(.5f);
         firstGuess = secondGuess = false;
-        //yield return new WaitForSeconds(1f);
-        //if (firstGuessPuzzle == secondGuessPuzzle)
-        //{
-        //    yield return new WaitForSeconds(.5f);
-
-        //    btns[firstGuessIndex].interactable = false;
-        //    btns[secondGuessIndex].interactable = false;
-
-        //    btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
-        //    btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
-
-        //    CheckIfTheGameIsFinished();
-        //}
-        //else
-        //{
-        //    yield return new WaitForSeconds(.5f);
-        //    btns[firstGuessIndex].image.sprite = bgImage;
-        //    btns[firstGuessIndex].image.sprite = bgImage;
-
-        //}
-        //yield return new WaitForSeconds(.5f);
-        //firstGuess = secondGuess = false;
 
     }
     void CheckIfTheGameIsFinished()
@@ -175,12 +129,6 @@ public class GameController : MonoBehaviour
             Debug.Log("Game Finished");
             Debug.Log("it took you" + countGuesses + "many guess to finish the game");
         }
-        //countCorrectGuesses++;
-        //if (countCorrectGuesses == gameGuesses)
-        //{
-        //    Debug.Log("Game Finished");
-        //    Debug.Log("it look you"+ countGuesses + "many guess to finish the game");
-        //}
     }
     void Shuffle(List<Sprite> list) 
     {
