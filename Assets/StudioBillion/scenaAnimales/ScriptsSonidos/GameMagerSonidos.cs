@@ -21,6 +21,27 @@ public class GameMagerSonidos : MonoBehaviour
     private QuizUISonidos quizUIs = null;
     private AudioSource audioSources = null;
 
+    // Panel de instrucciones
+    [SerializeField] private Button instructionsButton = null;
+    [SerializeField] private GameObject instructionsPanel = null;
+    [SerializeField] private Button closeInstructionsButton = null;
+
+    // Cuando pierde el usuario
+    [SerializeField] private GameObject gameOverPanel = null;
+    [SerializeField] private Button restartButton = null;
+    [SerializeField] private Button goToMenuButton = null;
+
+    // Cuando gana el usuario
+    [SerializeField] private GameObject victoryPanel = null;
+    [SerializeField] private Text victoryText = null;
+    [SerializeField] private Button victoryExitButton = null;
+    [SerializeField] private Button victoryRestartButton = null;
+
+    // Confirmación de salida
+    [SerializeField] private GameObject exitConfirmationPanel = null;
+    [SerializeField] private Button confirmExitButton = null;
+    [SerializeField] private Button cancelExitButton = null;
+
     private void Start()
     {
         audioSources = GetComponent<AudioSource>();
@@ -49,6 +70,109 @@ public class GameMagerSonidos : MonoBehaviour
         else
         {
             Debug.LogError("ExitButton not assigned.");
+        }
+
+        // Configuración de confirmación de salida
+        if (exitConfirmationPanel != null)
+        {
+            exitConfirmationPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Exit Confirmation Panel not assigned.");
+        }
+
+        if (confirmExitButton != null)
+        {
+            confirmExitButton.onClick.AddListener(OnConfirmExitS);
+        }
+        else
+        {
+            Debug.LogError("Confirm Exit Button not assigned.");
+        }
+
+        if (cancelExitButton != null)
+        {
+            cancelExitButton.onClick.AddListener(OnCancelExitS);
+        }
+        else
+        {
+            Debug.LogError("Cancel Exit Button not assigned.");
+        }
+
+        // Configuración de pantalla de Game Over y Victoria
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(false);
+        }
+
+        if (restartButton != null)
+        {
+            restartButton.onClick.AddListener(OnRestartButtonClickedS);
+        }
+        else
+        {
+            Debug.LogError("RestartButton not assigned.");
+        }
+
+        if (goToMenuButton != null)
+        {
+            goToMenuButton.onClick.AddListener(OnGoToMenuButtonClickedS);
+        }
+        else
+        {
+            Debug.LogError("GoToMenuButton not assigned.");
+        }
+
+        if (victoryExitButton != null)
+        {
+            victoryExitButton.onClick.AddListener(OnExitButtonClickedS);
+        }
+        else
+        {
+            Debug.LogError("Victory Exit Button not assigned.");
+        }
+
+        if (victoryRestartButton != null)
+        {
+            victoryRestartButton.onClick.AddListener(OnRestartButtonClickedS);
+        }
+        else
+        {
+            Debug.LogError("Victory Restart Button not assigned.");
+        }
+
+        // Configuración de instrucciones
+        if (instructionsButton != null)
+        {
+            instructionsButton.onClick.AddListener(ShowInstructionsS);
+        }
+        else
+        {
+            Debug.LogError("Instructions Button not assigned.");
+        }
+
+        if (instructionsPanel != null)
+        {
+            instructionsPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Instructions Panel not assigned.");
+        }
+
+        if (closeInstructionsButton != null)
+        {
+            closeInstructionsButton.onClick.AddListener(HideInstructionsS);
+        }
+        else
+        {
+            Debug.LogError("Close Instructions Button not assigned.");
         }
 
         NextQuestionS();
@@ -99,7 +223,7 @@ public class GameMagerSonidos : MonoBehaviour
         {
             correctAnswerCounts++;
             UpdateCorrectAnswerTextS();
-            if (correctAnswerCounts == 10)
+            if (correctAnswerCounts == maxCorrectAnswerss)
             {
                 GameOverS();
             }
@@ -128,11 +252,71 @@ public class GameMagerSonidos : MonoBehaviour
 
     private void GameOverS()
     {
-        SceneManager.LoadScene(0);
+        if (correctAnswerCounts == maxCorrectAnswerss && lifes > 0)
+        {
+            if (victoryPanel != null)
+            {
+                victoryPanel.SetActive(true);
+                if (victoryText != null)
+                {
+                    victoryText.text = $"¡Ganaste! Tu puntuación es: {correctAnswerCounts}/{maxCorrectAnswerss}";
+                }
+            }
+        }
+        else
+        {
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+            }
+        }
     }
 
     private void OnExitButtonClickedS()
     {
+        if (exitConfirmationPanel != null)
+        {
+            exitConfirmationPanel.SetActive(true);
+        }
+    }
+
+    private void OnConfirmExitS()
+    {
         SceneManager.LoadScene(1);
     }
+
+    private void OnCancelExitS()
+    {
+        if (exitConfirmationPanel != null)
+        {
+            exitConfirmationPanel.SetActive(false);
+        }
+    }
+
+    private void OnRestartButtonClickedS()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnGoToMenuButtonClickedS()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    private void ShowInstructionsS()
+    {
+        if (instructionsPanel != null)
+        {
+            instructionsPanel.SetActive(true);
+        }
+    }
+
+    private void HideInstructionsS()
+    {
+        if (instructionsPanel != null)
+        {
+            instructionsPanel.SetActive(false);
+        }
+    }
 }
+
