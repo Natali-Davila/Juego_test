@@ -44,6 +44,6 @@ public class ropero : MonoBehaviour
     public void ActivarObjeto()
     {
 
-        SceneManager.LoadScene("Mymemorama");
+        SceneManager.LoadScene("Memorama");
     }
 }

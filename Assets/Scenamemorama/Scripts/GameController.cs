@@ -191,7 +191,7 @@ public class GameController : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Puntuación: " + score;
     }
 
     void UpdateHearts()
