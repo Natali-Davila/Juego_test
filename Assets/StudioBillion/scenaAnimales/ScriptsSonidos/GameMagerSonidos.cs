@@ -72,7 +72,6 @@ public class GameMagerSonidos : MonoBehaviour
             Debug.LogError("ExitButton not assigned.");
         }
 
-        // Configuración de confirmación de salida
         if (exitConfirmationPanel != null)
         {
             exitConfirmationPanel.SetActive(false);
@@ -100,7 +99,6 @@ public class GameMagerSonidos : MonoBehaviour
             Debug.LogError("Cancel Exit Button not assigned.");
         }
 
-        // Configuración de pantalla de Game Over y Victoria
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -131,7 +129,7 @@ public class GameMagerSonidos : MonoBehaviour
 
         if (victoryExitButton != null)
         {
-            victoryExitButton.onClick.AddListener(OnExitButtonClickedS);
+            victoryExitButton.onClick.AddListener(ExitToMenu);
         }
         else
         {
@@ -147,7 +145,6 @@ public class GameMagerSonidos : MonoBehaviour
             Debug.LogError("Victory Restart Button not assigned.");
         }
 
-        // Configuración de instrucciones
         if (instructionsButton != null)
         {
             instructionsButton.onClick.AddListener(ShowInstructionsS);
@@ -302,7 +299,10 @@ public class GameMagerSonidos : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
+    private void ExitToMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
     private void ShowInstructionsS()
     {
         if (instructionsPanel != null)

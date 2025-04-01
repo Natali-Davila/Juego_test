@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
 
         if (victoryExitButton != null)
         {
-            victoryExitButton.onClick.AddListener(OnExitButtonClicked);
+            victoryExitButton.onClick.AddListener(ExitToMenu);
         }
         else
         {
@@ -325,6 +325,10 @@ public class GameManager : MonoBehaviour
 
     //Se va al menú principal
     private void OnGoToMenuButtonClicked()
+    {
+        SceneManager.LoadScene(1);
+    }
+    private void ExitToMenu()
     {
         SceneManager.LoadScene(1);
     }

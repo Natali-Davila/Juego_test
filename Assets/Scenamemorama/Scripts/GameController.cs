@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
             goToMenuButton.onClick.AddListener(OnGoToMenuButtonClicked);
 
         if (victoryExitButton != null)
-            victoryExitButton.onClick.AddListener(OnExitButtonClicked);
+            victoryExitButton.onClick.AddListener(ExitToMenu);
 
         if (victoryRestartButton != null)
             victoryRestartButton.onClick.AddListener(OnRestartButtonClicked);
@@ -261,6 +261,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    private void ExitToMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     private void ShowInstructions()
     {
         if (instructionsPanel != null)
@@ -276,6 +281,7 @@ public class GameController : MonoBehaviour
             instructionsPanel.SetActive(false);
         }
     }
+
     void Shuffle(List<Sprite> list)
     {
         for (int i = 0; i < list.Count; i++)
