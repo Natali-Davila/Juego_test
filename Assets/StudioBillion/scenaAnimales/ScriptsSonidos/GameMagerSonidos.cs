@@ -256,7 +256,7 @@ public class GameMagerSonidos : MonoBehaviour
                 victoryPanel.SetActive(true);
                 if (victoryText != null)
                 {
-                    victoryText.text = $"¡Ganaste! Tu puntuación es: {correctAnswerCounts}/{maxCorrectAnswerss}";
+                    victoryText.text = " ";
                 }
             }
         }
@@ -303,6 +303,7 @@ public class GameMagerSonidos : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+   
     private void ShowInstructionsS()
     {
         if (instructionsPanel != null)
@@ -318,5 +319,6 @@ public class GameMagerSonidos : MonoBehaviour
             instructionsPanel.SetActive(false);
         }
     }
+
 }
 

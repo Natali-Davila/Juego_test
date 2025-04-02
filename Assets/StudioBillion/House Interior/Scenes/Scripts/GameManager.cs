@@ -268,7 +268,7 @@ public class GameManager : MonoBehaviour
                 victoryPanel.SetActive(true);
                 if (victoryText != null)
                 {
-                    victoryText.text = $"¡Ganaste! Tu puntuación es: {correctAnswerCount}/{maxCorrectAnswers}";
+                    victoryText.text = "";
                 }
                 else
                 {

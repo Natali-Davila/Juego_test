@@ -13,7 +13,6 @@ public class MenuPrincipal : MonoBehaviour
 
     public void Salir()
     {
-        Debug.Log("salir..."); 
-            Application.Quit();
+          Application.Quit();
     }
 }

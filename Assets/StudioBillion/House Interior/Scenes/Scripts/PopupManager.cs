@@ -1,26 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PopupManager : MonoBehaviour
 {
-    public GameObject popupInstrucciones;  
-    public Button closeButton;  
+    public GameObject popupInstrucciones;
+    public Button closeButton;
+    public Button instruccionesButton;
 
     void Start()
     {
-        
-        if (SceneManager.GetActiveScene().name == "House Interior")
-        {
-            popupInstrucciones.SetActive(true);
-        }
+        popupInstrucciones.SetActive(false);
 
         closeButton.onClick.AddListener(CerrarPopup);
+        instruccionesButton.onClick.AddListener(MostrarPopup);
     }
 
     void CerrarPopup()
     {
-      
         popupInstrucciones.SetActive(false);
     }
+
+    void MostrarPopup()
+    {
+        popupInstrucciones.SetActive(true);
+    }
 }
+
+
+
+
