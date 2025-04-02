@@ -191,7 +191,7 @@ public class GameController : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = " ";
+        scoreText.text = "Puntuación: " + score;
     }
 
     void UpdateHearts()
@@ -225,7 +225,7 @@ public class GameController : MonoBehaviour
             victoryPanel.SetActive(true);
             if (victoryText != null)
             {
-                victoryText.text = $"¡Ganaste! Tu puntuación es: {score}";
+                victoryText.text = $"";
             }
         }
     }
