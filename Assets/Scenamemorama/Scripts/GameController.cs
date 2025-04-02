@@ -225,7 +225,7 @@ public class GameController : MonoBehaviour
             victoryPanel.SetActive(true);
             if (victoryText != null)
             {
-                victoryText.text = $"";
+                victoryText.text = $"FELICIDADES GANASTE!!!";
             }
         }
     }

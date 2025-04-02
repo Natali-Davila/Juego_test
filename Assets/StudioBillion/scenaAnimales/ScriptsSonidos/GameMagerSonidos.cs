@@ -256,7 +256,7 @@ public class GameMagerSonidos : MonoBehaviour
                 victoryPanel.SetActive(true);
                 if (victoryText != null)
                 {
-                    victoryText.text = " ";
+                    victoryText.text = $"FELICIDADES GANASTE!!!";
                 }
             }
         }
