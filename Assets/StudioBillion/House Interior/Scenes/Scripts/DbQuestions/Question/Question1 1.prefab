@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: " \xBFCu\xE1l es el color del libro? "
-  image: {fileID: 21300000, guid: 691538c1ecd6a424f94bb9ccbffa7cc0, type: 3}
+  image: {fileID: 21300000, guid: 01884bdd1e352294395ff9d5a5265d37, type: 3}
   options:
   - text: Morado
     correct: 0
