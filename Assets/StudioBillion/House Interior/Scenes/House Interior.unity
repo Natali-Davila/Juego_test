@@ -1525,10 +1525,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2076010999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3055, y: 0.3725}
-  m_AnchorMax: {x: 0.71250015, y: 0.94750005}
-  m_AnchoredPosition: {x: -18, y: -53}
-  m_SizeDelta: {x: 1186, y: 40}
+  m_AnchorMin: {x: 0.024500001, y: 0.3125}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -24.5, y: -50}
+  m_SizeDelta: {x: 49, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821542513
 MonoBehaviour:
@@ -1552,11 +1552,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 60
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5617,6 +5617,10 @@ PrefabInstance:
     - target: {fileID: 6064615637842175602, guid: ee5ade11bc65e86499cdcddcdd55d094, type: 3}
       propertyPath: m_Name
       value: ButtonOriginal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064615637842175602, guid: ee5ade11bc65e86499cdcddcdd55d094, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6079385391576409098, guid: ee5ade11bc65e86499cdcddcdd55d094, type: 3}
       propertyPath: m_AnchorMax.x

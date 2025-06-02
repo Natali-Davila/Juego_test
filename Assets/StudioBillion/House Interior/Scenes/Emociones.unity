@@ -1412,7 +1412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45375, y: 0.28522658}
   m_AnchorMax: {x: 0.96000004, y: 0.6246173}
-  m_AnchoredPosition: {x: -4.575012, y: 4}
+  m_AnchoredPosition: {x: -4.5750732, y: 4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373658753
@@ -1826,6 +1826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465915301}
   - component: {fileID: 465915302}
+  - component: {fileID: 465915303}
   m_Layer: 5
   m_Name: ControladorJuego
   m_TagString: Untagged
@@ -1877,23 +1878,32 @@ MonoBehaviour:
   - {fileID: 671318206}
   - {fileID: 298838018}
   contadorAciertosTexto: {fileID: 1008471019}
+  audioSource: {fileID: 465915303}
   emociones:
   - nombre: Alegria
     imagen: {fileID: 21300000, guid: 14bcaa5d468e9c1459afe5dbd4a57314, type: 3}
+    sonido: {fileID: 0}
   - nombre: Decepcion
     imagen: {fileID: 21300000, guid: 6a937242df360be44a6f2de9e28fc84d, type: 3}
+    sonido: {fileID: 0}
   - nombre: Enojo
     imagen: {fileID: 21300000, guid: d2ee395f0b56ee2498f1c3266b463e7f, type: 3}
+    sonido: {fileID: 0}
   - nombre: Miedo
     imagen: {fileID: 21300000, guid: 8e6b4b8a2cddbbe4da7efcf482181929, type: 3}
+    sonido: {fileID: 0}
   - nombre: Pensativo
     imagen: {fileID: 21300000, guid: 17f957e20b4438a48abbf96e9dfd4ea5, type: 3}
+    sonido: {fileID: 0}
   - nombre: Sorpresa
     imagen: {fileID: 21300000, guid: e4627980738df724885d725e8ecb6ca8, type: 3}
+    sonido: {fileID: 0}
   - nombre: Tranquilo
     imagen: {fileID: 21300000, guid: ab007d3cbb887d94c97977b09abb5100, type: 3}
+    sonido: {fileID: 0}
   - nombre: Triste
     imagen: {fileID: 21300000, guid: 125c156904deb0146908dc3f3dfb0573, type: 3}
+    sonido: {fileID: 0}
   corazones:
   - {fileID: 1338120884}
   - {fileID: 620328263}
@@ -1912,6 +1922,102 @@ MonoBehaviour:
   botonMenu: {fileID: 1263166813}
   botonSalirVictoria: {fileID: 1537479866}
   botonVolverAJugar: {fileID: 1915495981}
+--- !u!82 &465915303
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465915300}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d45033152bbab0642afe395b94c72dc3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &517159451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,7 +4726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e90298b6b43960d4ba9ac531ce8ed270, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f80db3feb67910b4bb6bc15cb85f0cc9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

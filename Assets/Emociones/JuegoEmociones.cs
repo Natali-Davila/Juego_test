@@ -9,6 +9,7 @@ public class Emocion
 {
     public string nombre;
     public Sprite imagen;
+    public AudioClip sonido;
 }
 
 public class JuegoEmociones : MonoBehaviour
@@ -18,7 +19,8 @@ public class JuegoEmociones : MonoBehaviour
     public Button emocionTextoBoton;
     public Text emocionTexto;
     public List<Button> botonesImagen;
-    public Text contadorAciertosTexto; 
+    public Text contadorAciertosTexto;
+    public AudioSource audioSource;
 
     [Header("Emociones")]
     public List<Emocion> emociones;
@@ -45,7 +47,7 @@ public class JuegoEmociones : MonoBehaviour
 
     [Header("Botón de Victoria")]
     public Button botonSalirVictoria;
-    public Button botonVolverAJugar; 
+    public Button botonVolverAJugar;
 
     private Emocion emocionCorrecta;
     private int respuestasCorrectas;
@@ -57,27 +59,32 @@ public class JuegoEmociones : MonoBehaviour
         ActualizarCorazones();
         ConfigurarBotonesUI();
         ActualizarContadorAciertos();
+        CargarSonidosEmociones();
         IniciarJuego();
     }
 
     void ConfigurarBotonesUI()
     {
         botonSalir.onClick.AddListener(() => panelConfirmarSalida.SetActive(true));
-        botonConfirmarSalida.onClick.AddListener(() => SceneManager.LoadScene(1)); 
+        botonConfirmarSalida.onClick.AddListener(() => SceneManager.LoadScene(1));
         botonCancelarSalida.onClick.AddListener(() => panelConfirmarSalida.SetActive(false));
         botonReiniciar.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
-        botonMenu.onClick.AddListener(() => SceneManager.LoadScene(1)); 
+        botonMenu.onClick.AddListener(() => SceneManager.LoadScene(1));
         botonInstrucciones.onClick.AddListener(() => panelInstrucciones.SetActive(true));
         botonCerrarInstrucciones.onClick.AddListener(() => panelInstrucciones.SetActive(false));
 
-        
-        botonSalirVictoria.onClick.AddListener(() => SceneManager.LoadScene(1)); 
-        botonVolverAJugar.onClick.AddListener(() => ReiniciarJuego()); 
+
+        botonSalirVictoria.onClick.AddListener(() => SceneManager.LoadScene(1));
+        botonVolverAJugar.onClick.AddListener(() => ReiniciarJuego());
 
         panelGameOver.SetActive(false);
         panelVictoria.SetActive(false);
         panelInstrucciones.SetActive(false);
         panelConfirmarSalida.SetActive(false);
+
+        emocionTextoBoton.onClick.RemoveAllListeners();
+        emocionTextoBoton.onClick.AddListener(() => ReproducirSonidoEmocion());
+
     }
 
     void IniciarJuego()
@@ -93,27 +100,81 @@ public class JuegoEmociones : MonoBehaviour
 
     void SeleccionarNuevaPregunta()
     {
-        List<Emocion> emocionesAleatorias = emociones.OrderBy(x => Random.value).ToList();
-        emocionCorrecta = emocionesAleatorias[Random.Range(0, emocionesAleatorias.Count)];
+        if (emociones.Count < 2 || botonesImagen.Count < 2)
+        {
+            Debug.LogError("Se requieren al menos 2 emociones y 2 botones.");
+            return;
+        }
+
+
+        emocionCorrecta = emociones[Random.Range(0, emociones.Count)];
         emocionTexto.text = emocionCorrecta.nombre;
+
+
+        List<Emocion> emocionesIncorrectas = emociones.Where(e => e.nombre != emocionCorrecta.nombre).ToList();
+        Emocion emocionIncorrecta = emocionesIncorrectas[Random.Range(0, emocionesIncorrectas.Count)];
+
+
+        List<Emocion> opciones = new List<Emocion> { emocionCorrecta, emocionIncorrecta };
+        opciones = opciones.OrderBy(x => Random.value).ToList();
+
 
         for (int i = 0; i < botonesImagen.Count; i++)
         {
-            int index = i;
-            botonesImagen[i].GetComponent<Image>().sprite = emocionesAleatorias[i].imagen;
-            botonesImagen[i].onClick.RemoveAllListeners();
-            botonesImagen[i].onClick.AddListener(() => VerificarRespuesta(emocionesAleatorias[index]));
+            if (i < 2)
+            {
+                botonesImagen[i].gameObject.SetActive(true);
+                int index = i;
+                botonesImagen[i].GetComponent<Image>().sprite = opciones[i].imagen;
+                botonesImagen[i].onClick.RemoveAllListeners();
+                botonesImagen[i].onClick.AddListener(() => VerificarRespuesta(opciones[index]));
+            }
+            else
+            {
+                botonesImagen[i].gameObject.SetActive(false);
+            }
         }
 
-        preguntaTexto.text = "Selecciona la emocion correcta";
+        preguntaTexto.text = "Selecciona la emoción correcta";
     }
+
+    void ReproducirSonidoEmocion()
+    {
+        if (emocionCorrecta != null && emocionCorrecta.sonido != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = emocionCorrecta.sonido;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No hay sonido asignado a esta emoción.");
+        }
+    }
+    void CargarSonidosEmociones()
+    {
+        foreach (var emocion in emociones)
+        {
+            string ruta = "SonidosEmociones/" + emocion.nombre.ToLower(); 
+            AudioClip clip = Resources.Load<AudioClip>(ruta);
+            if (clip != null)
+            {
+                emocion.sonido = clip;
+            }
+            else
+            {
+                Debug.LogWarning($"No se encontró el sonido para la emoción: {emocion.nombre} en Resources/SonidosEmociones/");
+            }
+        }
+    }
+
 
     void VerificarRespuesta(Emocion seleccion)
     {
         if (seleccion.nombre == emocionCorrecta.nombre)
         {
             respuestasCorrectas++;
-            ActualizarContadorAciertos(); 
+            ActualizarContadorAciertos();
 
             if (respuestasCorrectas >= maxRespuestasCorrectas)
             {
@@ -121,12 +182,12 @@ public class JuegoEmociones : MonoBehaviour
             }
             else
             {
-                SeleccionarNuevaPregunta(); 
+                SeleccionarNuevaPregunta();
             }
         }
         else
         {
-            vidas--; 
+            vidas--;
             ActualizarCorazones();
 
             if (vidas <= 0)
@@ -136,9 +197,9 @@ public class JuegoEmociones : MonoBehaviour
         }
     }
 
-    void ActualizarContadorAciertos() 
+    void ActualizarContadorAciertos()
     {
-        contadorAciertosTexto.text = respuestasCorrectas.ToString()+ "/10";
+        contadorAciertosTexto.text = respuestasCorrectas.ToString() + "/10";
     }
 
     void ActualizarCorazones()
@@ -167,8 +228,7 @@ public class JuegoEmociones : MonoBehaviour
         ActualizarCorazones();
         ActualizarContadorAciertos();
         SeleccionarNuevaPregunta();
-        panelVictoria.SetActive(false); 
+        panelVictoria.SetActive(false);
     }
 }
-
 

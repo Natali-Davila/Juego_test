@@ -1,8 +1,5 @@
 using System;
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
-using UnityEngine.InputSystem;
-#endif
 
 namespace StarterAssets
 {
@@ -21,52 +18,88 @@ namespace StarterAssets
         public bool cursorLocked = true;
         public bool cursorInputForLook = true;
 
-        private Vector2 uiMoveDirection = Vector2.zero; 
+        private Vector2 uiMoveDirection = Vector2.zero;
 
-#if ENABLE_INPUT_SYSTEM
-        public void OnMove(InputValue value)
-        {
-            MoveInput(value.Get<Vector2>());
-        }
+        // Touch input handling
+        private int touchFingerId = -1;
+        private Vector2 touchStartPosition;
 
-        public void OnLook(InputValue value)
+        public float touchDeadZone = 20f;
+        public float maxMoveDistance = 100f;
+
+        void Update()
         {
-            if (cursorInputForLook)
+            HandleTouchMovement();
+
+            if (uiMoveDirection != Vector2.zero)
             {
-                LookInput(value.Get<Vector2>());
+                move = uiMoveDirection;
+            }
+            else if (move != Vector2.zero)
+            {
+                move = Vector2.zero;
             }
         }
 
-        public void OnJump(InputValue value)
+        private void HandleTouchMovement()
         {
-            JumpInput(value.isPressed);
+            if (Input.touchCount > 0)
+            {
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    Touch touch = Input.GetTouch(i);
+
+                    switch (touch.phase)
+                    {
+                        case TouchPhase.Began:
+                            // Start tracking the first finger
+                            if (touchFingerId == -1)
+                            {
+                                touchFingerId = touch.fingerId;
+                                touchStartPosition = touch.position;
+                            }
+                            break;
+
+                        case TouchPhase.Moved:
+                        case TouchPhase.Stationary:
+                            if (touch.fingerId == touchFingerId)
+                            {
+                                Vector2 delta = touch.position - touchStartPosition;
+
+                                if (delta.magnitude > touchDeadZone)
+                                {
+                                    Vector2 normalizedDelta = Vector2.ClampMagnitude(delta, maxMoveDistance) / maxMoveDistance;
+                                    uiMoveDirection = new Vector2(normalizedDelta.x, normalizedDelta.y);
+                                }
+                                else
+                                {
+                                    uiMoveDirection = Vector2.zero;
+                                }
+                            }
+                            break;
+
+                        case TouchPhase.Ended:
+                        case TouchPhase.Canceled:
+                            if (touch.fingerId == touchFingerId)
+                            {
+                                touchFingerId = -1;
+                                uiMoveDirection = Vector2.zero;
+                            }
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                uiMoveDirection = Vector2.zero;
+                touchFingerId = -1;
+            }
         }
 
-        public void OnSprint(InputValue value)
-        {
-            SprintInput(value.isPressed);
-        }
-#endif
-
-        public void MoveInput(Vector2 newMoveDirection)
-        {
-            move = newMoveDirection;
-        }
-
-        public void LookInput(Vector2 newLookDirection)
-        {
-            look = newLookDirection;
-        }
-
-        public void JumpInput(bool newJumpState)
-        {
-            jump = newJumpState;
-        }
-
-        public void SprintInput(bool newSprintState)
-        {
-            sprint = newSprintState;
-        }
+        public void MoveInput(Vector2 newMoveDirection) => move = newMoveDirection;
+        public void LookInput(Vector2 newLookDirection) => look = newLookDirection;
+        public void JumpInput(bool newJumpState) => jump = newJumpState;
+        public void SprintInput(bool newSprintState) => sprint = newSprintState;
 
         private void OnApplicationFocus(bool hasFocus)
         {
@@ -78,29 +111,16 @@ namespace StarterAssets
             Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
-        
-        public void MoveUp() { StartMoving(Vector2.up); }
-        public void MoveDown() { StartMoving(Vector2.down); }
-        public void MoveLeft() { StartMoving(Vector2.left); }
-        public void MoveRight() { StartMoving(Vector2.right); }
-        public void StopMoving() { StartMoving(Vector2.zero); } 
+        // Optional button methods for touch UI
+        public void MoveUp() => StartMoving(Vector2.up);
+        public void MoveDown() => StartMoving(Vector2.down);
+        public void MoveLeft() => StartMoving(Vector2.left);
+        public void MoveRight() => StartMoving(Vector2.right);
+        public void StopMoving() => StartMoving(Vector2.zero);
 
         private void StartMoving(Vector2 direction)
         {
             uiMoveDirection = direction;
         }
-
-        private void Update()
-        {
-            if (uiMoveDirection != Vector2.zero)
-            {
-                move = uiMoveDirection;
-            }
-            else if (move != Vector2.zero)
-            {
-                move = Vector2.zero;
-            }
-        }
-
     }
 }

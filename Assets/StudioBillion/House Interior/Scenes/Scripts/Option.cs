@@ -1,8 +1,9 @@
+using UnityEngine;
 
 [System.Serializable]
-public class Option 
+public class Option
 {
-    public string text = null; 
-    public bool correct = false; 
-    
+    public string text;
+    public bool correct;
+    public Color color;
 }
